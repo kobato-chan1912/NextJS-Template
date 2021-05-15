@@ -28,11 +28,13 @@ export const put = async ({ url, body }) => {
   }
 }
 
-export const get = async ({ url }) => {
+export const get = async ({ url, query }) => {
   try {
-    const data = await axios.put(BACKEND_URL + url, { headers })
+    const { data } = await axios.get(BACKEND_URL + url, { headers, params: query })
+    // console.log(data)
     return data
   } catch (e) {
+    console.log(e)
     const { data } = e.response || { data: { code: 500, message: e.toString() } }
     return data
   }
