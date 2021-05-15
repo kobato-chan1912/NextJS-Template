@@ -17,11 +17,10 @@ import ButtonMenu from "@components/ButtonMenu";
 const useStyles = makeStyles((theme) => ({
   styleHeader: {
     top: 0,
-    position: "fixed",
     width: "100%",
+    position: "fixed",
     backgroundColor: "#FFFFFF",
     paddingBottom: theme.spacing(2),
-    overflow: 'hidden',
   },
   styleButton: {
     width: "100%",
