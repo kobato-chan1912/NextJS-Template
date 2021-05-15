@@ -1,15 +1,25 @@
-import React from 'react'
-import { useRouter } from 'next/router'
-import styles from '@styles/Home.module.css'
-import { ExampleComponent } from '@components'
+import React from "react";
+import { useRouter } from "next/router";
+import styles from "@styles/Home.module.css";
+import { ExampleComponent } from "@components";
+import Header from "components/Header";
 
 export default function Home() {
-  const router = useRouter()
+  const router = useRouter();
 
   return (
-    <div className={styles.container}>
-      <h1 onClick={() => { router.push('/home') }}>HELLO WORLD</h1>
-      <ExampleComponent />
-    </div>
-  )
+    <React.Fragment>
+      <Header />
+      <div className={styles.container}>
+        <h1
+          onClick={() => {
+            router.push("/home");
+          }}
+        >
+          HELLO WORLD
+        </h1>
+        <ExampleComponent />
+      </div>
+    </React.Fragment>
+  );
 }
