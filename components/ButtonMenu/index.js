@@ -8,7 +8,8 @@ import Popper from "@material-ui/core/Popper";
 import MenuItem from "@material-ui/core/MenuItem";
 import MenuList from "@material-ui/core/MenuList";
 import { makeStyles } from "@material-ui/core/styles";
-
+import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -58,7 +59,7 @@ export default function ButtonMenu({ label }) {
           aria-haspopup="true"
           onClick={handleToggle}
         >
-          {label}
+          {label}&nbsp;{open ? <ExpandMoreIcon /> : <ChevronRightIcon />}
         </Button>
         <Popper
           open={open}
@@ -96,6 +97,6 @@ export default function ButtonMenu({ label }) {
   );
 }
 
-ButtonMenu.PropTypes = {
+ButtonMenu.propTypes = {
   label: PropTypes.any,
 };

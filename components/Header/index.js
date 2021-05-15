@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     position: "fixed",
     backgroundColor: "#FFFFFF",
-    paddingBottom: theme.spacing(2),
+    paddingBottom: theme.spacing(1),
   },
   styleButton: {
     width: "100%",
@@ -61,11 +61,11 @@ export default function Header() {
                         className={classes.styleImage}
                       />
                     </Grid>
-                    <Grid item xs>
+                    <Grid item xs={true}>
                       <TextField fullWidth />
                     </Grid>
                     <Grid item xs="auto">
-                      <IconButton size="small">
+                      <IconButton>
                         <SearchIcon />
                       </IconButton>
                     </Grid>
@@ -91,9 +91,9 @@ export default function Header() {
                   </Grid>
                 </Grid>
               </Grid>
-              <Grid item xs="2">
+              <Grid item xs={2}>
                 <button className={classes.styleButton}>
-                  <Typography>Kiểm tra đơn đăng ký</Typography>
+                  <Typography><b>Kiểm tra đơn đăng ký</b></Typography>
                 </button>
               </Grid>
             </Grid>
