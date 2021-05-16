@@ -54,6 +54,7 @@ export default function ButtonMenu({ label }) {
     <div className={classes.root}>
       <div>
         <Button
+          fullWidth
           ref={anchorRef}
           aria-controls={open ? "menu-list-grow" : undefined}
           aria-haspopup="true"
@@ -76,7 +77,7 @@ export default function ButtonMenu({ label }) {
                   placement === "bottom" ? "center top" : "center bottom",
               }}
             >
-              <Paper>
+              <Paper style={{ zIndex: 30 }}>
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList
                     autoFocusItem={open}
