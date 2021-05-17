@@ -9,6 +9,9 @@ import Menu from "@material-ui/icons/Menu";
 // core components
 import IconButton from "@material-ui/core/IconButton";
 import Appbar from "./Appbar";
+import { AppBar, Grid, List, ListItem, ListItemText } from "@material-ui/core";
+import HideOnScroll from "./HideOnScroll";
+import Image from "next/image";
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -18,38 +21,61 @@ export default function Header() {
   };
 
   return (
-    <div
-      style={{
-        width: "100%",
-        backgroundColor: "#ffff",
-        paddingBottom: "2rem",
-        zIndex: 30,
-        position: "sticky",
-        paddingTop: "2rem",
-      }}
-    >
-      <Hidden smDown implementation="css">
-        <Appbar />
-      </Hidden>
-      <Hidden mdUp>
-        <IconButton
-          color="inherit"
-          aria-label="open drawer"
-          onClick={handleDrawerToggle}
-        >
-          <Menu />
-        </IconButton>
-      </Hidden>
-      <Hidden mdUp implementation="js">
-        <Drawer
-          variant="temporary"
-          anchor={"right"}
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-        >
-          <div>Mobie</div>
-        </Drawer>
-      </Hidden>
+    <div>
+      <HideOnScroll slideProps={{ direction: "down" }}>
+        <AppBar color="inherit">
+          <Hidden mdDown>
+            <Hidden smDown implementation="css">
+              <Appbar />
+            </Hidden>{" "}
+          </Hidden>
+          <Hidden lgUp>
+            <Hidden mdUp>
+              <Grid container>
+                <Grid item xs="auto">
+                  <IconButton onClick={handleDrawerToggle}>
+                    <Menu />
+                  </IconButton>
+                </Grid>
+              </Grid>
+            </Hidden>
+            <Hidden mdUp implementation="js">
+              <Drawer
+                variant="temporary"
+                anchor={"right"}
+                open={mobileOpen}
+                onClose={handleDrawerToggle}
+              >
+                <div style={{ padding: "1rem" }}>
+                  <Image
+                    src="/images/divanoLogo.svg"
+                    alt="Picture of Logo"
+                    width={150}
+                    height={34}
+                  ></Image>
+                  <List component="nav">
+                    <ListItem button>
+                      <ListItemText primary="TRANG CHỦ" />
+                    </ListItem>
+                    <ListItem button>
+                      <ListItemText primary="LOẠI SẢN PHẨM" />
+                    </ListItem>
+                    <ListItem button>
+                      <ListItemText primary="DỰ ÁN ĐÃ LÀM" />
+                    </ListItem>
+                    <ListItem button>
+                      <ListItemText primary="LIÊN HỆ CÔNG TY" />
+                    </ListItem>
+                    <ListItem button>
+                      <ListItemText primary="BÀI VIẾT" />
+                    </ListItem>
+                  </List>
+                </div>
+              </Drawer>
+            </Hidden>
+          </Hidden>
+        </AppBar>
+      </HideOnScroll>
     </div>
   );
 }

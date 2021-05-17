@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Button, Card, CardMedia, Grid, Typography } from "@material-ui/core";
 import CardShadowOnlyHover from "components/CardShadowOnlyHover";
+import TextFieldWhite from "components/TextFieldWhite";
 
-export default function CategoryItem() {
+export default function CardImageEmail({ props }) {
   const [isShown, setIsShown] = useState(false);
 
   return (
@@ -14,7 +15,7 @@ export default function CategoryItem() {
         onMouseLeave={() => setIsShown(false)}
       >
         <CardMedia
-          image="/images/product-5.jpg"
+          image={props}
           style={{
             height: "400px",
             backgroundPosition: "center",
@@ -29,39 +30,25 @@ export default function CategoryItem() {
               top: 0,
               left: 0,
               width: "100%",
-              paddingTop: "20%",
+              paddingTop: "10%",
             }}
           >
-            <Grid container spacing={2}>
+            <Grid container>
               <Grid item xs={12}>
-                <Typography
-                  variant="h6"
-                  align="center"
-                  style={{ color: "white" }}
-                >
-                  <b>2020 COLLECTION</b>
+                <Typography variant="h3" style={{ color: "white" }}>
+                  <b>Stay in touch!</b>
                 </Typography>
               </Grid>
               <Grid item xs={12}>
-                <Typography
-                  variant="h4"
-                  align="center"
-                  style={{ color: "white" }}
-                >
-                  <b>Beedroms</b>
+                <Typography variant="h5" style={{ color: "white" }}>
+                  <b>Be first to know about all new interior features!</b>
                 </Typography>
               </Grid>
               <Grid item xs={12}>
-                <Typography
-                  variant="h6"
-                  align="center"
-                  style={{ color: "white" }}
-                >
-                  Top picks four your desire
-                </Typography>
-              </Grid>
-              <Grid item xs={12}>
-                <Grid container justify="center">
+                <Grid container spacing={2} alignItems="center">
+                  <Grid item xs={6}>
+                    <TextFieldWhite />
+                  </Grid>
                   <Grid item xs="auto">
                     <Button
                       variant="outlined"
@@ -70,7 +57,7 @@ export default function CategoryItem() {
                         borderColor: "white",
                       }}
                     >
-                      <b>Shop now</b>
+                      <b>Subscribe now</b>
                     </Button>
                   </Grid>
                 </Grid>
