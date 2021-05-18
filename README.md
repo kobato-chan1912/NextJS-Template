@@ -1,5 +1,13 @@
 ## API Here
 
+# Banners 
+
+- Get the current banners 
+
+```console
+method@GET :~  $ https://api-digital.azurewebsites.net/api/banners
+```
+
 
 # Products 
 
