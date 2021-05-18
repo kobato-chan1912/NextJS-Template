@@ -3,10 +3,12 @@ import Head from "next/head";
 import CarouselBanner from "components/CarouselBanner";
 import CategoryMenu from "components/CategoryMenu";
 import ProductMenu from "components/ProductMenu";
-import { Box, Grid } from "@material-ui/core";
+import { Box, Button, CardContent, Grid, Typography } from "@material-ui/core";
 import ExampleMenu from "components/ExampleMenu";
 import ExamplePost from "components/ExamplePost";
-import CardImageEmail from "components/CardImageEmail";
+import TextFieldWhite from "components/TextFieldWhite";
+import CardHoverShowAnimation from "components/CardHoverShowAnimation";
+import ExampleEmail from "components/ExampleEmail";
 
 const Home = ({
   title,
@@ -41,9 +43,7 @@ const Home = ({
             <ExamplePost />
           </Grid>
           <Grid item xs={12}>
-            <Box mt={8}>
-              <CardImageEmail props={"/images/box-3.jpg"} />
-            </Box>
+            <ExampleEmail />
           </Grid>
         </Grid>
       </React.Fragment>

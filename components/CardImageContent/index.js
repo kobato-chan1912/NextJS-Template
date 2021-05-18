@@ -17,6 +17,7 @@ export default function CardImageContent({ props }) {
         <CardMedia
           image={props}
           style={{
+            cursor: "pointer",
             height: "400px",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",

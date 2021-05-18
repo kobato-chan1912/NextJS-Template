@@ -1,35 +1,52 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core/styles";
+import { withStyles, makeStyles } from "@material-ui/core/styles";
+
 import TextField from "@material-ui/core/TextField";
 
-const styles = {
+const CssTextField = withStyles({
   root: {
-    borderColor: "white",
-  },
-  input: {
-    color: "white",
-    borderColor: "white",
-  },
-};
+    "& label": {
+      color: "white",
+    },
+    "& label.Mui-focused": {
+      color: "rgb(234, 155, 37)",
+    },
 
-function TextFieldWhite(props) {
-  const { classes } = props;
+    "& .MuiOutlinedInput-root": {
+      "& fieldset": {
+        borderColor: "white",
+      },
+      "&:hover fieldset": {
+        borderColor: "rgb(234, 155, 37)",
+      },
+      "&.Mui-focused fieldset": {
+        borderColor: "rgb(234, 155, 37)",
+      },
+    },
+  },
+})(TextField);
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: "flex",
+    flexWrap: "wrap",
+  },
+  margin: {
+    margin: theme.spacing(1),
+  },
+}));
+
+export default function TextFieldWhite({ label }) {
+  const classes = useStyles();
 
   return (
-    <TextField
-      defaultValue="Enter your e-mail"
-      className={classes.root}
-      InputProps={{
-        className: classes.input,
-      }}
-      {...props}
+    <CssTextField
+      className={classes.margin}
+      id="custom-css-standard-input"
+      fullWidth
+      variant="outlined"
+      size="small"
+      label={label}
     />
   );
 }
-
-TextFieldWhite.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(TextFieldWhite);
