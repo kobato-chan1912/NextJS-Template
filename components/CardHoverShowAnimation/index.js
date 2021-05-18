@@ -21,7 +21,7 @@ const cardStyles = makeStyles(() => ({
       // transform: 'scale(1.5,1.5)',
       boxShadow: `0px 3px 20px 0px rgba(44, 101, 144, 0.3)`,
       "& > div": {
-        height: "60%",
+        height: "65%",
         transition: "all 2s ease",
         color: "white",
       },
