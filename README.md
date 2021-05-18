@@ -8,10 +8,6 @@
 method@GET :~  $ https://api-digital.azurewebsites.net/api/banners
 ```
 
-- Get all: Get all products order by created time. 
-```console
-method@GET :~  $ https://api-digital.azurewebsites.net/api/products
-```
 
 # Products 
 
