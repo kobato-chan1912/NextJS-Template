@@ -5,6 +5,7 @@ import { Box, Grid } from "@material-ui/core";
 import Home from "./home";
 import { get } from "@util";
 import Footer from "components/Footer";
+import Detail from "./detail";
 
 export default function Index({ title, content }) {
   return (
@@ -17,6 +18,7 @@ export default function Index({ title, content }) {
           <Grid item xs={12} md={9}>
             <Box px={2}>
               <Home title={title} {...content} />
+              <Detail />
             </Box>
             <Box my={8}>
               <Footer />

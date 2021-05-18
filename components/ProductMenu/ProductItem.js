@@ -11,8 +11,11 @@ import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import VisibilityIcon from "@material-ui/icons/Visibility";
 import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
 import CardShadowOnlyHover from "components/CardShadowOnlyHover";
+import { useRouter } from "next/router";
 
 export default function ProductItem() {
+  const router = useRouter();
+
   return (
     <CardShadowOnlyHover>
       <Card variant="outlined" style={{ position: "relative" }}>
@@ -94,7 +97,12 @@ export default function ProductItem() {
                   </Typography>
                 </Typography>
               </Box>
-              <IconButton style={{ backgroundColor: "#3C5570" }}>
+              <IconButton
+                style={{ backgroundColor: "#3C5570" }}
+                onClick={() => {
+                  router.push("/detail");
+                }}
+              >
                 <ArrowRightAltIcon style={{ color: "white" }} />
               </IconButton>
             </Box>
