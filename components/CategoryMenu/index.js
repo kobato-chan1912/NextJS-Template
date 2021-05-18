@@ -1,8 +1,5 @@
 import React from "react";
-import {
-  Grid,
-  Typography,
-} from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
 import CategoryItem from "./CategoryItem";
 
 export default function CategoryMenu() {
@@ -28,15 +25,11 @@ export default function CategoryMenu() {
         </Grid>
         <Grid item xs={12}>
           <Grid container spacing={4}>
-            <Grid item xs={12} sm={6} md={4}>
-              <CategoryItem />
-            </Grid>
-            <Grid item xs={12} sm={6} md={4}>
-              <CategoryItem />
-            </Grid>
-            <Grid item xs={12} sm={6} md={4}>
-              <CategoryItem />
-            </Grid>
+            {[].map((e) => (
+              <Grid item xs={12} sm={6} md={4}>
+                <CategoryItem data={e} />
+              </Grid>
+            ))}
           </Grid>
         </Grid>
       </Grid>

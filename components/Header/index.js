@@ -13,7 +13,7 @@ import { AppBar, Grid, List, ListItem, ListItemText } from "@material-ui/core";
 import HideOnScroll from "./HideOnScroll";
 import Image from "next/image";
 
-export default function Header() {
+export default function Header(props) {
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -26,7 +26,7 @@ export default function Header() {
         <AppBar color="inherit">
           <Hidden mdDown>
             <Hidden smDown implementation="css">
-              <Appbar />
+              <Appbar {...props} />
             </Hidden>{" "}
           </Hidden>
           <Hidden lgUp>

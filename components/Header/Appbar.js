@@ -12,7 +12,11 @@ import Image from "next/image";
 import ItemHeader from "./ItemHeader";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
-export default function Appbar() {
+export default function Appbar({
+  productCategories,
+  projectCategories,
+  postCategories,
+}) {
   return (
     <div style={{ paddingBottom: "2rem" }}>
       <Grid container justify="center">
@@ -76,15 +80,11 @@ export default function Appbar() {
                     }
                     content={
                       <Grid container spacing={2}>
-                        <Grid item xs={12}>
-                          <Typography>Homepages</Typography>
-                        </Grid>
-                        <Grid item xs={12}>
-                          <Typography>Homepages - 1</Typography>
-                        </Grid>
-                        <Grid item xs={12}>
-                          <Typography>Homepages - 2</Typography>
-                        </Grid>
+                        {(productCategories || []).map((e) => (
+                          <Grid item xs={12}>
+                            <Typography>{e.name_product_category}</Typography>
+                          </Grid>
+                        ))}
                       </Grid>
                     }
                   />
@@ -100,15 +100,11 @@ export default function Appbar() {
                     }
                     content={
                       <Grid container spacing={2}>
-                        <Grid item xs={12}>
-                          <Typography>Homepages</Typography>
-                        </Grid>
-                        <Grid item xs={12}>
-                          <Typography>Homepages - 1</Typography>
-                        </Grid>
-                        <Grid item xs={12}>
-                          <Typography>Homepages - 2</Typography>
-                        </Grid>
+                        {(projectCategories || []).map((e) => (
+                          <Grid item xs={12}>
+                            <Typography>{e.name_project_category}</Typography>
+                          </Grid>
+                        ))}
                       </Grid>
                     }
                   />
@@ -148,15 +144,11 @@ export default function Appbar() {
                     }
                     content={
                       <Grid container spacing={2}>
-                        <Grid item xs={12}>
-                          <Typography>Homepages</Typography>
-                        </Grid>
-                        <Grid item xs={12}>
-                          <Typography>Homepages - 1</Typography>
-                        </Grid>
-                        <Grid item xs={12}>
-                          <Typography>Homepages - 2</Typography>
-                        </Grid>
+                        {(postCategories || []).map((e) => (
+                          <Grid item xs={12}>
+                            <Typography>{e.name_categories}</Typography>
+                          </Grid>
+                        ))}
                       </Grid>
                     }
                   />

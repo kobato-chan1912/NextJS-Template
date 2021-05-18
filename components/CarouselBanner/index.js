@@ -22,7 +22,7 @@ const styleBanner = {
   paddingLeft: "10%",
 };
 
-export default function CarouselBanner() {
+export default function CarouselBanner({ products }) {
   return (
     <Carousel
       enableAutoPlay
@@ -31,116 +31,45 @@ export default function CarouselBanner() {
       showArrows={false}
       itemPosition="START"
     >
-      <div style={styleBanner}>
-        <Typography variant="h5" style={{ color: "white" }}>
-          <b>Mẫu sản phẩm số 1</b>
-        </Typography>
-        <Typography variant="h6" style={{ color: "white" }}>
-          ** Product prices with{" "}
-        </Typography>
-        <Typography variant="h6" style={{ color: "white" }}>
-          ** Product prices with discount are available until the end of stock
-        </Typography>
-        <Button variant="outlined" style={{ borderColor: "#EA9B25" }}>
-          <Typography variant="h6" style={{ color: "#EA9B25" }}>
-            Đăng ký ngay
-          </Typography>
-        </Button>
-        &nbsp;
-        <Button variant="outlined" style={{ borderColor: "white" }}>
-          <Typography variant="h6" style={{ color: "white" }}>
-            Nhận tư vấn
-          </Typography>
-        </Button>
-        <Box mt={3}>
-          <Typography variant="h6" style={{ color: "white" }}>
-            <b>Chi phí thiết kế</b>
-          </Typography>
+      {products.map((e) => (
+        <div style={{ ...styleBanner, backgroundImage: `url(${e.image_url})` }}>
           <Typography variant="h5" style={{ color: "white" }}>
-            <b>3.000.000 Vnđ</b>{" "}
-            <Typography component="span" style={{ color: "white" }}>
-              <del>2.000.000 vnđ</del>
-            </Typography>
+            <b>{e.name_product}</b>
           </Typography>
-          <Typography style={{ color: "white" }}>
+          <Typography variant="h6" style={{ color: "white" }}>
+            ** Product prices with{" "}
+          </Typography>
+          <Typography variant="h6" style={{ color: "white" }}>
             ** Product prices with discount are available until the end of stock
           </Typography>
-        </Box>
-      </div>
-      {/* --------------------- */}
-      <div style={styleBanner}>
-        <Typography variant="h5" style={{ color: "white" }}>
-          <b>Mẫu sản phẩm số 1</b>
-        </Typography>
-        <Typography variant="h6" style={{ color: "white" }}>
-          ** Product prices with{" "}
-        </Typography>
-        <Typography variant="h6" style={{ color: "white" }}>
-          ** Product prices with discount are available until the end of stock
-        </Typography>
-        <Button variant="outlined" style={{ borderColor: "#EA9B25" }}>
-          <Typography variant="h6" style={{ color: "#EA9B25" }}>
-            Đăng ký ngay
-          </Typography>
-        </Button>
-        &nbsp;
-        <Button variant="outlined" style={{ borderColor: "white" }}>
-          <Typography variant="h6" style={{ color: "white" }}>
-            Nhận tư vấn
-          </Typography>
-        </Button>
-        <Box mt={3}>
-          <Typography variant="h6" style={{ color: "white" }}>
-            <b>Chi phí thiết kế</b>
-          </Typography>
-          <Typography variant="h5" style={{ color: "white" }}>
-            <b>3.000.000 Vnđ</b>{" "}
-            <Typography component="span" style={{ color: "white" }}>
-              <del>2.000.000 vnđ</del>
+          <Button variant="outlined" style={{ borderColor: "#EA9B25" }}>
+            <Typography variant="h6" style={{ color: "#EA9B25" }}>
+              Đăng ký ngay
             </Typography>
-          </Typography>
-          <Typography style={{ color: "white" }}>
-            ** Product prices with discount are available until the end of stock
-          </Typography>
-        </Box>
-      </div>
-      {/* -------------------------- */}
-      <div style={styleBanner}>
-        <Typography variant="h5" style={{ color: "white" }}>
-          <b>Mẫu sản phẩm số 1</b>
-        </Typography>
-        <Typography variant="h6" style={{ color: "white" }}>
-          ** Product prices with{" "}
-        </Typography>
-        <Typography variant="h6" style={{ color: "white" }}>
-          ** Product prices with discount are available until the end of stock
-        </Typography>
-        <Button variant="outlined" style={{ borderColor: "#EA9B25" }}>
-          <Typography variant="h6" style={{ color: "#EA9B25" }}>
-            Đăng ký ngay
-          </Typography>
-        </Button>
-        &nbsp;
-        <Button variant="outlined" style={{ borderColor: "white" }}>
-          <Typography variant="h6" style={{ color: "white" }}>
-            Nhận tư vấn
-          </Typography>
-        </Button>
-        <Box mt={3}>
-          <Typography variant="h6" style={{ color: "white" }}>
-            <b>Chi phí thiết kế</b>
-          </Typography>
-          <Typography variant="h5" style={{ color: "white" }}>
-            <b>3.000.000 Vnđ</b>{" "}
-            <Typography component="span" style={{ color: "white" }}>
-              <del>2.000.000 vnđ</del>
+          </Button>
+          &nbsp;
+          <Button variant="outlined" style={{ borderColor: "white" }}>
+            <Typography variant="h6" style={{ color: "white" }}>
+              Nhận tư vấn
             </Typography>
-          </Typography>
-          <Typography style={{ color: "white" }}>
-            ** Product prices with discount are available until the end of stock
-          </Typography>
-        </Box>
-      </div>
+          </Button>
+          <Box mt={3}>
+            <Typography variant="h6" style={{ color: "white" }}>
+              <b>Chi phí thiết kế</b>
+            </Typography>
+            <Typography variant="h5" style={{ color: "white" }}>
+              <b>{e.main_price} Vnđ</b>{" "}
+              <Typography component="span" style={{ color: "white" }}>
+                <del>{e.virtual_price} vnđ</del>
+              </Typography>
+            </Typography>
+            <Typography style={{ color: "white" }}>
+              ** Product prices with discount are available until the end of
+              stock
+            </Typography>
+          </Box>
+        </div>
+      ))}
     </Carousel>
   );
 }

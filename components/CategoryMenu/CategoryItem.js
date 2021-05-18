@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button, Card, CardMedia, Grid, Typography } from "@material-ui/core";
 import CardShadowOnlyHover from "components/CardShadowOnlyHover";
 
-export default function CategoryItem() {
+export default function CategoryItem({ data }) {
   const [isShown, setIsShown] = useState(false);
 
   return (
@@ -14,7 +14,7 @@ export default function CategoryItem() {
         onMouseLeave={() => setIsShown(false)}
       >
         <CardMedia
-          image="/images/product-5.jpg"
+          image={data.image_url}
           style={{
             height: "400px",
             backgroundPosition: "center",
@@ -39,7 +39,7 @@ export default function CategoryItem() {
                   align="center"
                   style={{ color: "white" }}
                 >
-                  <b>2020 COLLECTION</b>
+                  <b>{data.name_category}</b>
                 </Typography>
               </Grid>
               <Grid item xs={12}>
@@ -48,7 +48,7 @@ export default function CategoryItem() {
                   align="center"
                   style={{ color: "white" }}
                 >
-                  <b>Beedroms</b>
+                  <b>{data.name_product}</b>
                 </Typography>
               </Grid>
               <Grid item xs={12}>
