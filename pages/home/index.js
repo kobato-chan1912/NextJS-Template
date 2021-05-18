@@ -16,6 +16,7 @@ const Home = ({
   projects,
   postCategories,
   posts,
+  banners,
 }) => {
   return (
     <>
@@ -25,7 +26,7 @@ const Home = ({
       <React.Fragment>
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            <CarouselBanner products={products || []} />
+            <CarouselBanner banners={banners || []} />
           </Grid>
           <Grid item xs={12}>
             <CategoryMenu products={products || []} />

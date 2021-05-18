@@ -22,7 +22,7 @@ const styleBanner = {
   paddingLeft: "10%",
 };
 
-export default function CarouselBanner({ products }) {
+export default function CarouselBanner({ banners }) {
   return (
     <Carousel
       enableAutoPlay
@@ -31,10 +31,10 @@ export default function CarouselBanner({ products }) {
       showArrows={false}
       itemPosition="START"
     >
-      {products.map((e) => (
-        <div style={{ ...styleBanner, backgroundImage: `url(${e.image_url})` }}>
+      {banners.map((e) => (
+        <div style={{ ...styleBanner, backgroundImage: `url(${e.img_url})` }}>
           <Typography variant="h5" style={{ color: "white" }}>
-            <b>{e.name_product}</b>
+            <b>Mẫu sản phẩm số 1</b>
           </Typography>
           <Typography variant="h6" style={{ color: "white" }}>
             ** Product prices with{" "}
@@ -58,9 +58,9 @@ export default function CarouselBanner({ products }) {
               <b>Chi phí thiết kế</b>
             </Typography>
             <Typography variant="h5" style={{ color: "white" }}>
-              <b>{e.main_price} Vnđ</b>{" "}
+              <b>4000000 Vnđ</b>{" "}
               <Typography component="span" style={{ color: "white" }}>
-                <del>{e.virtual_price} vnđ</del>
+                <del>7000000 vnđ</del>
               </Typography>
             </Typography>
             <Typography style={{ color: "white" }}>

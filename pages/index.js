@@ -32,6 +32,7 @@ export async function getServerSideProps() {
     { data: projects },
     { data: postCategories },
     { data: posts },
+    { data: banners },
   ] = await Promise.all([
     get({ url: "//products/categories?limit=3" }),
     get({ url: "/products?limit=3" }),
@@ -39,6 +40,7 @@ export async function getServerSideProps() {
     get({ url: "/projects?limit=3" }),
     get({ url: "//posts/categories?limit=3" }),
     get({ url: "/posts?limit=3" }),
+    get({ url: "/banners" }),
   ]);
   return {
     props: {
@@ -50,6 +52,7 @@ export async function getServerSideProps() {
         projects,
         postCategories,
         posts,
+        banners,
       },
     },
   };
