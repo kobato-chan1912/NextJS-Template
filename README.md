@@ -1,24 +1,60 @@
 ## API Here
 
+
 # Products 
 
-- Get all 
+- Get all products categories 
+
 ```console
-method@GET :~  $ https://api-mkdn.com/api/v1/getProducts
+method@GET :~  $ https://api-digital.azurewebsites.net/api/products/categories
 ```
 
-- Get detail 
-
+- Get all: Get all products order by created time. 
 ```console
-method@GET :~  $ https://api-mkdn.com/api/v1/getProduct?id={idProduct}
-
-id: integer
+method@GET :~  $ https://api-digital.azurewebsites.net/api/products
 ```
 
-- New Product 
+- Get limit: Get all limit products order by created time. 
+```console
+method@GET :~  $ https://api-digital.azurewebsites.net/api/products?limit={limit}
+limit: number (integer)
+```
+
+# Projects
+
+- Get all projects categories 
 
 ```console
-method@POST :~  $ https://api-mkdn.com/api/v1/newProduct
+method@GET :~  $ https://api-digital.azurewebsites.net/api/projects/categories
+```
 
-id: integer
+- Get all: Get all projects order by created time. 
+```console
+method@GET :~  $ https://api-digital.azurewebsites.net/api/projects
+```
+
+- Get limit: Get all limit projects order by created time. 
+```console
+method@GET :~  $ https://api-digital.azurewebsites.net/api/projects?limit={limit}
+limit: number (integer)
+```
+
+
+# Posts
+
+- Get all posts categories 
+
+```console
+method@GET :~  $ https://api-digital.azurewebsites.net/api/posts/categories
+```
+
+- Get all: Get all posts order by created time. 
+```console
+method@GET :~  $ https://api-digital.azurewebsites.net/api/posts
+```
+
+- Get limit: Get all limit posts order by created time. 
+```console
+method@GET :~  $ https://api-digital.azurewebsites.net/api/posts?limit={limit}
+limit: number (integer)
 ```
