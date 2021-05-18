@@ -4,10 +4,11 @@ import CardShadowOnlyHover from "components/CardShadowOnlyHover";
 import CardHoverShowAnimation from "components/CardHoverShowAnimation";
 
 export default function CategoryItem({ data }) {
+  const { name_product_category, image_url } = data
   return (
     <CardShadowOnlyHover>
       <CardHoverShowAnimation
-        image={data.image_url}
+        image={image_url}
         content={
           <Grid container spacing={2}>
             <Grid item xs={12}>
@@ -16,7 +17,7 @@ export default function CategoryItem({ data }) {
                 align="center"
                 style={{ color: "white" }}
               >
-                <b>{data.name_category}</b>
+                <b>{name_product_category}</b>
               </Typography>
             </Grid>
             <Grid item xs={12}>
@@ -25,7 +26,7 @@ export default function CategoryItem({ data }) {
                 align="center"
                 style={{ color: "white" }}
               >
-                <b>{data.name_product}</b>
+                <b>Tên sản phẩm</b>
               </Typography>
             </Grid>
             <Grid item xs={12}>

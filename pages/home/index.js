@@ -31,16 +31,16 @@ const Home = ({
             <CarouselBanner banners={banners || []} />
           </Grid>
           <Grid item xs={12}>
-            <CategoryMenu products={products || []} />
+            <CategoryMenu productCategories={productCategories || []} />
           </Grid>
           <Grid item xs={12}>
-            <ProductMenu />
+            <ProductMenu products={products || []} />
           </Grid>
           <Grid item xs={12}>
-            <ExampleMenu />
+            <ExampleMenu projects={projects || []} />
           </Grid>
           <Grid item xs={12}>
-            <ExamplePost />
+            <ExamplePost posts={posts || []} />
           </Grid>
           <Grid item xs={12}>
             <ExampleEmail />

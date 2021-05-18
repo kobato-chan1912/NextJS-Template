@@ -2,7 +2,7 @@ import React from "react";
 import { Grid, Typography } from "@material-ui/core";
 import CardImageContent from "components/CardImageContent";
 
-export default function ExamplePost() {
+export default function ExamplePost({ posts }) {
   return (
     <>
       <Grid container spacing={2}>
@@ -25,15 +25,9 @@ export default function ExamplePost() {
         </Grid>
         <Grid item xs={12}>
           <Grid container spacing={4}>
-            <Grid item xs={12} sm={6} md={4}>
-              <CardImageContent props={"/images/product-31.jpg"} />
-            </Grid>
-            <Grid item xs={12} sm={6} md={4}>
-              <CardImageContent props={"/images/product-31.jpg"} />
-            </Grid>
-            <Grid item xs={12} sm={6} md={4}>
-              <CardImageContent props={"/images/product-31.jpg"} />
-            </Grid>
+            {posts.map(e => (<Grid item xs={12} sm={6} md={4} key={`examplePost-${e.id}`} >
+              <CardImageContent data={e} />
+            </Grid>))}
           </Grid>
         </Grid>
       </Grid>

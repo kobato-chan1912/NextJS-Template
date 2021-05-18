@@ -5,7 +5,7 @@ import {
 } from "@material-ui/core";
 import ProductItem from "./ProductItem";
 
-export default function ProductMenu() {
+export default function ProductMenu({ products }) {
   return (
     <>
       <Grid container spacing={2}>
@@ -28,15 +28,9 @@ export default function ProductMenu() {
         </Grid>
         <Grid item xs={12}>
           <Grid container spacing={4}>
-            <Grid item xs={12} sm={6} md={4}>
-              <ProductItem />
-            </Grid>
-            <Grid item xs={12} sm={6} md={4}>
-              <ProductItem />
-            </Grid>
-            <Grid item xs={12} sm={6} md={4}>
-              <ProductItem />
-            </Grid>
+            {products.map(e => (<Grid item xs={12} sm={6} md={4} key={`product-${e.id}`}>
+              <ProductItem data={e} />
+            </Grid>))}
           </Grid>
         </Grid>
       </Grid>

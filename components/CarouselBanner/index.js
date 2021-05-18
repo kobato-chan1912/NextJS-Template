@@ -53,10 +53,11 @@ export default function CarouselBanner({ banners }) {
       disableArrowsOnEnd={false}
       breakPoints={breakPoints}
       showArrows={false}
-      itemPosition="START"
+      itemPosition="flex-start"
     >
       {banners.map((e) => (
         <div
+          key={`banner-${e.id}`}
           style={{ backgroundImage: `url(${e.img_url})` }}
           className={classes.styleCard}
         >

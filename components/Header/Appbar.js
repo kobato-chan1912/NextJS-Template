@@ -81,7 +81,7 @@ export default function Appbar({
                     content={
                       <Grid container spacing={2}>
                         {(productCategories || []).map((e) => (
-                          <Grid item xs={12}>
+                          <Grid key={`menu-product-${e.id}`} item xs={12}>
                             <Typography>{e.name_product_category}</Typography>
                           </Grid>
                         ))}
@@ -101,7 +101,7 @@ export default function Appbar({
                     content={
                       <Grid container spacing={2}>
                         {(projectCategories || []).map((e) => (
-                          <Grid item xs={12}>
+                          <Grid key={`menu-project-${e.id}`} item xs={12}>
                             <Typography>{e.name_project_category}</Typography>
                           </Grid>
                         ))}
@@ -145,7 +145,7 @@ export default function Appbar({
                     content={
                       <Grid container spacing={2}>
                         {(postCategories || []).map((e) => (
-                          <Grid item xs={12}>
+                          <Grid key={`menu-post-${e.id}`} item xs={12}>
                             <Typography>{e.name_categories}</Typography>
                           </Grid>
                         ))}

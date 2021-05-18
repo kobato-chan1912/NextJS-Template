@@ -12,15 +12,17 @@ import VisibilityIcon from "@material-ui/icons/Visibility";
 import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
 import CardShadowOnlyHover from "components/CardShadowOnlyHover";
 import { useRouter } from "next/router";
+import { formatMoney } from "@util";
 
-export default function ProductItem() {
+export default function ProductItem({ data }) {
   const router = useRouter();
+  const { image_url, name_product, main_price, virtual_price } = data
 
   return (
     <CardShadowOnlyHover>
       <Card variant="outlined" style={{ position: "relative" }}>
         <CardMedia
-          image="/images/product-10.jpg"
+          image={image_url}
           style={{
             height: "400px",
             backgroundPosition: "center",
@@ -84,16 +86,16 @@ export default function ProductItem() {
             <Box style={{ display: "flex", justifyContent: "space-between" }}>
               <Box>
                 <Typography variant="h6">
-                  <b>Mẫu sản phẩm 1</b>
+                  <b>{name_product}</b>
                 </Typography>
                 <Typography variant="body2" color="textSecondary">
-                  <del>$ 500.000VNĐ</del>
+                  <del>$ {formatMoney(virtual_price)}</del>
                   <Typography
                     variant="body2"
                     component="span"
                     color="textSecondary"
                   >
-                    $ 1.000.000VNĐ
+                    $ {formatMoney(main_price)}
                   </Typography>
                 </Typography>
               </Box>

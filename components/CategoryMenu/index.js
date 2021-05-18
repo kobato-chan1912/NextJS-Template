@@ -2,7 +2,7 @@ import React from "react";
 import { Grid, Typography } from "@material-ui/core";
 import CategoryItem from "./CategoryItem";
 
-export default function CategoryMenu({ products }) {
+export default function CategoryMenu({ productCategories }) {
   return (
     <>
       <Grid container spacing={2}>
@@ -25,8 +25,8 @@ export default function CategoryMenu({ products }) {
         </Grid>
         <Grid item xs={12}>
           <Grid container spacing={4}>
-            {(products || []).map((e) => (
-              <Grid item xs={12} sm={6} md={4}>
+            {(productCategories || []).map((e) => (
+              <Grid key={`categoryMenu-${e.id}`} item xs={12} sm={6} md={4}>
                 <CategoryItem data={e} />
               </Grid>
             ))}
