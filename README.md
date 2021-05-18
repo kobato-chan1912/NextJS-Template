@@ -28,6 +28,12 @@ method@GET :~  $ https://api-digital.azurewebsites.net/api/products?limit={limit
 limit: number (integer)
 ```
 
+- Get product detail. 
+```console
+method@GET :~  $ https://api-digital.azurewebsites.net/api/products/{id}
+id: number (integer)
+```
+
 # Projects
 
 - Get all projects categories 
