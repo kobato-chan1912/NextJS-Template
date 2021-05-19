@@ -1,6 +1,14 @@
 import React from "react";
 
-import { Box, Button, Card, CardContent, CardMedia, Grid, Typography } from "@material-ui/core";
+import {
+  Box,
+  Button,
+  Card,
+  CardContent,
+  CardMedia,
+  Grid,
+  Typography,
+} from "@material-ui/core";
 
 import TextFieldWhite from "components/TextFieldWhite";
 import CardShadowOnlyHover from "components/CardShadowOnlyHover";
@@ -55,7 +63,7 @@ export default function ExampleEmail() {
                     </Grid>
                     <Grid item xs={12}>
                       <Grid container spacing={4} alignItems="center">
-                        <Grid item xs={4}>
+                        <Grid item xs={12} md={4}>
                           <TextFieldWhite
                             label="Enter your e-mail"
                             variant="outlined"
@@ -63,15 +71,17 @@ export default function ExampleEmail() {
                           />
                         </Grid>
                         <Grid item xs="auto">
-                          <Button
-                            variant="outlined"
-                            style={{
-                              color: "white",
-                              borderColor: "white",
-                            }}
-                          >
-                            <b>Subscribe now</b>
-                          </Button>
+                          <Box pl={1}>
+                            <Button
+                              variant="outlined"
+                              style={{
+                                color: "white",
+                                borderColor: "white",
+                              }}
+                            >
+                              <b>Subscribe now</b>
+                            </Button>
+                          </Box>
                         </Grid>
                       </Grid>
                     </Grid>

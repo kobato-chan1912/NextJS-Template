@@ -4,6 +4,7 @@ import {
   Card,
   CardContent,
   CardMedia,
+  Grid,
   IconButton,
   Typography,
 } from "@material-ui/core";
@@ -16,7 +17,7 @@ import { formatMoney } from "@util";
 
 export default function ProductItem({ data }) {
   const router = useRouter();
-  const { image_url, name_product, main_price, virtual_price } = data
+  const { image_url, name_product, main_price, virtual_price } = data;
 
   return (
     <CardShadowOnlyHover>
@@ -33,6 +34,7 @@ export default function ProductItem({ data }) {
         <span
           style={{
             position: "absolute",
+            cursor: 'pointer',
             top: 0,
             left: 0,
             marginTop: "5%",
@@ -48,6 +50,7 @@ export default function ProductItem({ data }) {
         <span
           style={{
             position: "absolute",
+            cursor: 'pointer',
             top: 0,
             right: 0,
             marginTop: "5%",
@@ -66,6 +69,7 @@ export default function ProductItem({ data }) {
         <span
           style={{
             position: "absolute",
+            cursor: 'pointer',
             top: 0,
             right: 0,
             marginTop: "15%",
@@ -83,31 +87,35 @@ export default function ProductItem({ data }) {
         </span>
         <span>
           <CardContent>
-            <Box style={{ display: "flex", justifyContent: "space-between" }}>
-              <Box>
-                <Typography variant="h6">
-                  <b>{name_product}</b>
-                </Typography>
-                <Typography variant="body2" color="textSecondary">
-                  <del>$ {formatMoney(virtual_price)}</del>
-                  <Typography
-                    variant="body2"
-                    component="span"
-                    color="textSecondary"
-                  >
-                    $ {formatMoney(main_price)}
+            <Grid container spacing={2}>
+              <Grid item xs>
+                <Box>
+                  <Typography variant="h6">
+                    <b>{name_product}</b>
                   </Typography>
-                </Typography>
-              </Box>
-              <IconButton
-                style={{ backgroundColor: "#3C5570" }}
-                onClick={() => {
-                  router.push("/detail");
-                }}
-              >
-                <ArrowRightAltIcon style={{ color: "white" }} />
-              </IconButton>
-            </Box>
+                  <Typography variant="body2" color="textSecondary">
+                    <del>$ {formatMoney(virtual_price)}</del>
+                    <Typography
+                      variant="body2"
+                      component="span"
+                      color="textSecondary"
+                    >
+                      $ {formatMoney(main_price)}
+                    </Typography>
+                  </Typography>
+                </Box>
+              </Grid>
+              <Grid item xs="auto">
+                <IconButton
+                  style={{ backgroundColor: "#3C5570" }}
+                  onClick={() => {
+                    router.push("/detail");
+                  }}
+                >
+                  <ArrowRightAltIcon style={{ color: "white" }} />
+                </IconButton>
+              </Grid>
+            </Grid>
           </CardContent>
         </span>
       </Card>
