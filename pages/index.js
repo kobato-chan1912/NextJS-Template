@@ -6,6 +6,8 @@ import Home from "./home";
 import { get } from "@util";
 import Footer from "components/Footer";
 import Detail from "./detail";
+import TrackingOrder from "./trackingOrder";
+import ResultSearch from "./resultSearch";
 
 export default function Index({ title, content }) {
 
@@ -23,6 +25,8 @@ export default function Index({ title, content }) {
             <Box px={2}>
               <Home title={title} {...content} />
               <Detail />
+              <TrackingOrder />
+              <ResultSearch />
             </Box>
             <Box my={8}>
               <Footer />

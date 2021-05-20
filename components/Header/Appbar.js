@@ -11,12 +11,15 @@ import ButtonMenu from "@components/ButtonMenu";
 import Image from "next/image";
 import ItemHeader from "./ItemHeader";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import { useRouter } from "next/router";
 
 export default function Appbar({
   productCategories,
   projectCategories,
   postCategories,
 }) {
+  const router = useRouter();
+
   return (
     <div style={{ paddingBottom: "2rem" }}>
       <Grid container justify="center">
@@ -166,6 +169,9 @@ export default function Appbar({
                   borderColor: " #EA9B25",
                   borderBottomRightRadius: "10px",
                   borderBottomLeftRadius: "10px",
+                }}
+                onClick={() => {
+                  router.push("/trackingOrder");
                 }}
               >
                 <b>Kiểm tra đơn đăng ký</b>

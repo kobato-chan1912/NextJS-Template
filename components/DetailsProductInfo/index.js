@@ -7,8 +7,18 @@ import ReplayIcon from "@material-ui/icons/Replay";
 import AlarmOnIcon from "@material-ui/icons/AlarmOn";
 import HomeIcon from "@material-ui/icons/Home";
 import SentimentVerySatisfiedIcon from "@material-ui/icons/SentimentVerySatisfied";
+import DialogCheckOrder from "components/DialogCheckOrder";
 
 function DetailsProductInfo() {
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <Box mt={6}>
       <Grid container spacing={2}>
@@ -128,11 +138,13 @@ function DetailsProductInfo() {
               borderBottomLeftRadius: "30px",
               height: "62px",
             }}
+            onClick={handleClickOpen}
           >
             <Typography variant="h6" style={{ color: "white" }}>
               <b>Đăng ký nhận tư vấn</b>
             </Typography>
           </Button>
+          <DialogCheckOrder open={open} onClose={handleClose} />
         </Grid>
 
         <Grid item xs={12}>
