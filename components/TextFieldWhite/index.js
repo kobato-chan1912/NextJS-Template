@@ -8,6 +8,10 @@ const CssTextField = withStyles({
     "& label": {
       color: "white",
     },
+    "& input": {
+      color: "white",
+    },
+
     "& label.Mui-focused": {
       color: "rgb(234, 155, 37)",
     },
@@ -18,9 +22,11 @@ const CssTextField = withStyles({
       },
       "&:hover fieldset": {
         borderColor: "rgb(234, 155, 37)",
+        color: "white",
       },
       "&.Mui-focused fieldset": {
         borderColor: "rgb(234, 155, 37)",
+        color: "white",
       },
     },
   },

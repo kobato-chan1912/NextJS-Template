@@ -3,7 +3,6 @@ import React from "react";
 import {
   Box,
   Button,
-  Card,
   CardContent,
   CardMedia,
   Grid,
@@ -24,7 +23,7 @@ export default function ExampleEmail() {
       <Grid item xs={12}>
         <Box>
           <CardShadowOnlyHover>
-            <Card variant="outlined" style={{ position: "relative" }}>
+            <div style={{ position: "relative" }}>
               <CardMedia
                 image={"/images/product-9.jpg"}
                 style={{
@@ -40,7 +39,8 @@ export default function ExampleEmail() {
                   top: 0,
                   left: 0,
                   width: "100%",
-                  paddingTop: "5%",
+                  paddingTop: "10%",
+                  paddingLeft: '5%',
                 }}
               >
                 <CardContent>
@@ -50,15 +50,14 @@ export default function ExampleEmail() {
                         variant="h4"
                         style={{ color: "white", paddingLeft: ".5rem" }}
                       >
-                        <b>Stay in touch!</b>
+                        Stay in touch!
                       </Typography>
                     </Grid>
                     <Grid item xs={12}>
                       <Typography
-                        variant="h6"
                         style={{ color: "white", paddingLeft: ".5rem" }}
                       >
-                        <b>Be first to know about all new interior features!</b>
+                        Be first to know about all new interior features!{" "}
                       </Typography>
                     </Grid>
                     <Grid item xs={12}>
@@ -88,7 +87,7 @@ export default function ExampleEmail() {
                   </Grid>
                 </CardContent>
               </span>
-            </Card>
+            </div>
           </CardShadowOnlyHover>
         </Box>
       </Grid>

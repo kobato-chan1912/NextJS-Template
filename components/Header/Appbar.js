@@ -29,12 +29,14 @@ export default function Appbar({
               <Box pt={2}>
                 <Grid container spacing={2} alignItems="center">
                   <Grid item xs="auto">
-                    <Image
-                      src="/images/divanoLogo.svg"
-                      alt="Picture of Logo"
-                      width={150}
-                      height={34}
-                    ></Image>
+                    <Box borderRight={1} pr={1}>
+                      <Image
+                        src="/images/divanoLogo.svg"
+                        alt="Picture of Logo"
+                        width={150}
+                        height={34}
+                      ></Image>
+                    </Box>
                   </Grid>
                   <Grid item xs={true}>
                     <TextField fullWidth />
@@ -47,8 +49,13 @@ export default function Appbar({
                 </Grid>
               </Box>
               {/* ----------------------- */}
-              <Grid container spacing={2} alignItems="center">
-                <Grid item xs>
+              <Grid
+                container
+                spacing={2}
+                alignItems="center"
+                justify="space-between"
+              >
+                <Grid item xs={2}>
                   {/* <ButtonMenu label={<b>TRANG CHỦ</b>} /> */}
                   <ItemHeader
                     label={
@@ -72,7 +79,7 @@ export default function Appbar({
                     }
                   />
                 </Grid>
-                <Grid item xs>
+                <Grid item xs={2}>
                   {/* <ButtonMenu label={<b>LOẠI SẢN PHẨM</b>} /> */}
                   <ItemHeader
                     label={
@@ -92,7 +99,7 @@ export default function Appbar({
                     }
                   />
                 </Grid>
-                <Grid item xs>
+                <Grid item xs={2}>
                   {/* <ButtonMenu label={<b>DỰ ÁN ĐÃ LÀM</b>} /> */}
                   <ItemHeader
                     label={
@@ -112,7 +119,7 @@ export default function Appbar({
                     }
                   />
                 </Grid>
-                <Grid item xs>
+                <Grid item xs={2}>
                   {/* <ButtonMenu label={<b>LIÊN HỆ CÔNG TY</b>} /> */}
                   <ItemHeader
                     label={
@@ -136,7 +143,7 @@ export default function Appbar({
                     }
                   />
                 </Grid>
-                <Grid item xs>
+                <Grid item xs={2}>
                   {/* <ButtonMenu label={<b>BÀI VIẾT</b>} /> */}
                   <ItemHeader
                     label={
@@ -162,7 +169,7 @@ export default function Appbar({
               <Button
                 style={{
                   width: "100%",
-                  height: "180%",
+                  height: "170%",
                   cursor: "pointer",
                   backgroundColor: "#EA9B25",
                   color: "#FFFFFF",

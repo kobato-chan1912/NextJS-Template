@@ -1,9 +1,7 @@
 import React from "react";
 import {
   Box,
-  Card,
   CardContent,
-  CardMedia,
   Grid,
   IconButton,
   Typography,
@@ -14,6 +12,7 @@ import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
 import CardShadowOnlyHover from "components/CardShadowOnlyHover";
 import { useRouter } from "next/router";
 import { formatMoney } from "@util";
+import CardHoverShowAnimationProduct from "components/CardHoverShowAnimationProduct";
 
 export default function ProductItem({ data }) {
   const router = useRouter();
@@ -21,71 +20,12 @@ export default function ProductItem({ data }) {
 
   return (
     <CardShadowOnlyHover>
-      <Card variant="outlined" style={{ position: "relative" }}>
-        <CardMedia
-          image={image_url}
-          style={{
-            height: "400px",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-        />
-        <span
-          style={{
-            position: "absolute",
-            cursor: 'pointer',
-            top: 0,
-            left: 0,
-            marginTop: "5%",
-            marginLeft: "5%",
-            backgroundColor: "#efb700",
-            color: "white",
-            padding: "2px",
-            borderRadius: "4px",
-          }}
-        >
-          -20%
-        </span>
-        <span
-          style={{
-            position: "absolute",
-            cursor: 'pointer',
-            top: 0,
-            right: 0,
-            marginTop: "5%",
-            marginRight: "5%",
-            backgroundColor: "#000000",
-            opacity: "0.3",
-            color: "white",
-            padding: "4px",
-            borderRadius: "100%",
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
-          <FavoriteBorderIcon />
-        </span>
-        <span
-          style={{
-            position: "absolute",
-            cursor: 'pointer',
-            top: 0,
-            right: 0,
-            marginTop: "15%",
-            marginRight: "5%",
-            backgroundColor: "#000000",
-            opacity: "0.3",
-            color: "white",
-            padding: "4px",
-            borderRadius: "100%",
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
-          <VisibilityIcon />
-        </span>
-        <span>
+      <CardHoverShowAnimationProduct
+        image={image_url}
+        span1="-20%"
+        span2={<FavoriteBorderIcon />}
+        span3={<VisibilityIcon />}
+        content={
           <CardContent>
             <Grid container spacing={2}>
               <Grid item xs>
@@ -117,8 +57,8 @@ export default function ProductItem({ data }) {
               </Grid>
             </Grid>
           </CardContent>
-        </span>
-      </Card>
+        }
+      />
     </CardShadowOnlyHover>
   );
 }

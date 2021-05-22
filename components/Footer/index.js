@@ -14,7 +14,7 @@ const styleTypo = { cursor: "pointer", color: "#666666", paddingTop: "16px" };
 
 export default function Footer() {
   return (
-    <Card style={{ backgroundColor: "#F5F4EF" }}>
+    <div style={{ backgroundColor: "#F5F4EF" }}>
       <CardContent>
         <Box textAlign="center" my={2}>
           <Image
@@ -94,6 +94,6 @@ export default function Footer() {
           </Box>
         </Box>
       </CardContent>
-    </Card>
+    </div>
   );
 }

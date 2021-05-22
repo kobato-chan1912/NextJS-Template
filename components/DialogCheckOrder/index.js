@@ -48,7 +48,7 @@ export default function DialogCheckOrder(props) {
             />
           </Grid>
           <Grid item xs={12}>
-            <Card variant="outlined">
+            <div>
               <Box p={2}>
                 <Grid container spacing={2}>
                   <Grid item xs={12} md={5}>
@@ -84,7 +84,7 @@ export default function DialogCheckOrder(props) {
                   </Grid>
                 </Grid>
               </Box>
-            </Card>
+            </div>
           </Grid>
           <Grid item xs={12}>
             <Button

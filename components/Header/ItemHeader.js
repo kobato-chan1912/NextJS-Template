@@ -51,7 +51,7 @@ export default function ItemHeader({ label, content }) {
   const classes = bounceStyles();
   return (
     <div className={classes.bounce}>
-      <Button id="button" className={classes.button}>
+      <Button fullWidth id="button" className={classes.button}>
         {label}
       </Button>
       <ul>{content}</ul>

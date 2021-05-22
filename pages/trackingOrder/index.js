@@ -66,7 +66,7 @@ export default function TrackingOrder() {
             </Grid>
             {/* Cho nay` map ra nha */}
             <Grid item xs={12}>
-              <Card variant="outlined">
+              <div>
                 <Box p={2}>
                   <Grid container spacing={2}>
                     <Grid item xs>
@@ -91,11 +91,11 @@ export default function TrackingOrder() {
                     </Grid>
                   </Grid>
                 </Box>
-              </Card>
+              </div>
             </Grid>
 
             <Grid item xs={12}>
-              <Card variant="outlined">
+              <div>
                 <Box p={2}>
                   <Grid container spacing={2}>
                     <Grid item xs>
@@ -120,11 +120,11 @@ export default function TrackingOrder() {
                     </Grid>
                   </Grid>
                 </Box>
-              </Card>
+              </div>
             </Grid>
 
             <Grid item xs={12}>
-              <Card variant="outlined">
+              <div>
                 <Box p={2}>
                   <Grid container spacing={2}>
                     <Grid item xs>
@@ -149,11 +149,11 @@ export default function TrackingOrder() {
                     </Grid>
                   </Grid>
                 </Box>
-              </Card>
+              </div>
             </Grid>
 
             <Grid item xs={12}>
-              <Card variant="outlined">
+              <div>
                 <Box p={2}>
                   <Grid container spacing={2}>
                     <Grid item xs>
@@ -178,7 +178,7 @@ export default function TrackingOrder() {
                     </Grid>
                   </Grid>
                 </Box>
-              </Card>
+              </div>
             </Grid>
           </Grid>
         </Grid>

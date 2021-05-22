@@ -21,7 +21,7 @@ function DetailsProductInfo() {
   };
   return (
     <Box mt={6}>
-      <Grid container spacing={2}>
+      <Grid container spacing={1}>
         <Grid item xs={12}>
           <Typography variant="h5">
             <b>TÊN SẢN PHẨM</b>
