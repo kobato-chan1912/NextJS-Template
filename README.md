@@ -72,3 +72,22 @@ method@GET :~  $ https://api-digital.azurewebsites.net/api/posts
 method@GET :~  $ https://api-digital.azurewebsites.net/api/posts?limit={limit}
 limit: number (integer)
 ```
+
+
+- Get post Detail: 
+```console
+method@GET :~  $ https://api-digital.azurewebsites.net/api/posts/{id}
+limit: number (integer)
+```
+
+# Users Register 
+```console
+method@POST :~  $ https://api-digital.azurewebsites.net/api/users/products/{id}
+Format: params: type
+-->
+name: string,
+phone: string,
+adress: string,
+id: int
+<--
+```
