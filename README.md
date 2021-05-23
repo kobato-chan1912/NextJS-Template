@@ -32,7 +32,33 @@ limit: number (integer)
 ```console
 method@GET :~  $ https://api-digital.azurewebsites.net/api/products/{id}
 id: number (integer)
+
+res@response :~ $ id = 14 
+status: 200,
+data: {
+id: 14,
+id_category: 1,
+name_product: "Mellany Sofa",
+virtual_price: 230000,
+main_price: 450000,
+image_url: "http://www.elathemes.com/themes/divano/assets/images/product-9.jpg",
+description: ".."
+},
+related: [
+{
+id: 17,
+image_url: "http://www.elathemes.com/themes/divano/assets/images/product-6.jpg",
+id_category: 1,
+main_price: 233000,
+virtual_price: 340000,
+name_product: "Sofa 5"
+},
+...
+]
 ```
+
+
+
 
 # Projects
 
@@ -78,6 +104,31 @@ limit: number (integer)
 ```console
 method@GET :~  $ https://api-digital.azurewebsites.net/api/posts/{id}
 limit: number (integer)
+
+
+res@response :~ $ id = 1
+
+
+status: 200,
+data: {
+id: 1,
+category_id: 1,
+cover_img: "http://www.elathemes.com/themes/divano/assets/images/product-1.jpg",
+title: "Cách nấu cà chua",
+description: "Món cà chua này ngon quá ",
+content: "...",
+created_at: "2021-05-17T06:58:46.000000Z",
+updated_at: "2021-05-17T06:58:55.000000Z",
+name_category: "Nấu ăn ngon"
+},
+related: [
+{
+id: 2,
+cover_img: "http://www.elathemes.com/themes/divano/assets/images/product-2.jpg",
+title: "Sài Gòn mưa to gió lớn",
+created_at: "2021-05-17T06:58:52.000000Z"
+}
+]
 ```
 
 # Users Register 
@@ -90,4 +141,19 @@ phone: string,
 adress: string,
 id: int
 <--
+
+res@response :~ $ id = 1
+name: Dung Mai,
+phone: 0222222222
+address: Distc 5 
+
+if data (phone_) has registerd: 
+>> 
+"status" => 404,
+"message" => "User has been registered"
+
+if data(_phone_) hasn'r registered yet 
+>> 
+"status" => 200,
+"message" => "User registered successfully"
 ```
