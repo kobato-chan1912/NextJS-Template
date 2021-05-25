@@ -27,12 +27,24 @@ const cardStyles = makeStyles(() => ({
       bottom: "7rem",
       left: "10rem",
     },
+    "& #spanHover": {
+      backgroundColor: "rgb(0,0,0, 0.3)",
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+      display: "none",
+    },
     "&:hover": {
-      opacity: 0.7,
       "& #spanDescription": {
         height: "40%",
         transition: "all 2s ease",
         color: "white",
+      },
+      "& #spanHover": {
+        transition: "all 2s ease",
+        display: "block",
       },
       "& #div1": {
         // height: "65%",
@@ -69,6 +81,7 @@ export default function CardHoverShowAnimationCategory({
           borderTopRightRadius: "4px",
         }}
       />
+      <span id="spanHover"></span>
       <span id="span1">{span}</span>
       <span id="spanDescription">{spanDescription}</span>
       <div id="div1">{content}</div>

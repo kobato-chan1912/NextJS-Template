@@ -6,8 +6,15 @@ const cardStyles = makeStyles(() => ({
   styleCard: {
     cursor: "pointer",
     position: "relative",
+    display: "inline-block",
+    overflow: "hidden",
+    width: "100%",
+    height: "400px",
+    backgroundColor: "#000000",
+    boxShadow: "0 0 5px rgba(0, 0, 0, 0.15)",
     transition: "all 2s ease",
-    "& > div": {
+
+    "& #styleDivContent": {
       position: "absolute",
       bottom: 0,
       left: 0,
@@ -15,27 +22,24 @@ const cardStyles = makeStyles(() => ({
       height: 0,
       overflow: "hidden",
     },
+
     "& #image1": {
-      transform: "scale(1,1)",
       width: "100%",
-      height: "400px",
-      backgroundPosition: "center",
-      backgroundRepeat: "no-repeat",
-      backgroundSize: "cover",
-      borderRadius: "4px",
-      borderRadius: "4px",
+      verticalAlign: "top",
+      transition: "all 2s ease",
+      transition: "all 2s ease",
     },
     "&:hover": {
       opacity: 0.6,
       // transform: 'scale(1.5,1.5)',
-      "& > div": {
+      "& #styleDivContent": {
         height: "55%",
         transition: "all 2s ease",
         color: "white",
       },
       "& #image1": {
         transition: "all 2s ease",
-        transform: "scale(1.04,1.04)",
+        transform: "scale(1.3,1.3)",
       },
     },
   },
@@ -46,9 +50,9 @@ export default function CardHoverShowAnimation({ image, content }) {
   const classes = cardStyles();
 
   return (
-    <div className={classes.styleCard}>
+    <div id="styleDiv" className={classes.styleCard}>
       <img alt="123" src={image} height="100%" id="image1" />
-      <div>{content}</div>
+      <div id="styleDivContent">{content}</div>
     </div>
   );
 }
