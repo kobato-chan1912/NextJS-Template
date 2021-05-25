@@ -12,7 +12,7 @@ const cardStyles = makeStyles(() => ({
     height: "400px",
     backgroundColor: "#000000",
     boxShadow: "0 0 5px rgba(0, 0, 0, 0.15)",
-    transition: "all 2s ease",
+    transition: "all 1s ease",
 
     "& #styleDivContent": {
       position: "absolute",
@@ -26,19 +26,19 @@ const cardStyles = makeStyles(() => ({
     "& #image1": {
       width: "100%",
       verticalAlign: "top",
-      transition: "all 2s ease",
-      transition: "all 2s ease",
+      transition: "all 1s ease",
+      transition: "all 1s ease",
     },
     "&:hover": {
       opacity: 0.6,
       // transform: 'scale(1.5,1.5)',
       "& #styleDivContent": {
         height: "55%",
-        transition: "all 2s ease",
+        transition: "all 1s ease",
         color: "white",
       },
       "& #image1": {
-        transition: "all 2s ease",
+        transition: "all 1s ease",
         transform: "scale(1.3,1.3)",
       },
     },

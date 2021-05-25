@@ -8,7 +8,7 @@ const cardStyles = makeStyles(() => ({
   styleCard: {
     cursor: "pointer",
     position: "relative",
-    transition: "all 2s ease",
+    transition: "all 1s ease",
     "& #image": {
       cursor: "pointer",
       height: "400px",
@@ -21,7 +21,7 @@ const cardStyles = makeStyles(() => ({
     "&:hover": {
       opacity: 0.8,
       boxShadow: `0px 3px 20px 0px rgba(44, 101, 144, 0.3)`,
-      transition: "all 2s ease",
+      transition: "all 1s ease",
       transform: "translateY(-10px)",
     },
   },

@@ -22,7 +22,7 @@ const styleBanner = makeStyles(() => ({
 
     cursor: "pointer",
     position: "relative",
-    transition: "all 2s ease",
+    transition: "all 1s ease",
     "& > div": {
       position: "absolute",
       bottom: 0,
@@ -37,7 +37,7 @@ const styleBanner = makeStyles(() => ({
       boxShadow: `0px 3px 20px 0px rgba(44, 101, 144, 0.3)`,
       "& > div": {
         height: "65%",
-        transition: "all 2s ease",
+        transition: "all 1s ease",
         color: "white",
       },
     },

@@ -6,7 +6,7 @@ const cardStyles = makeStyles(() => ({
   styleCard: {
     cursor: "pointer",
     position: "relative",
-    transition: "all 2s ease",
+    transition: "all 1s ease",
     "& #span1": {
       position: "absolute",
       top: "1rem",
@@ -39,16 +39,16 @@ const cardStyles = makeStyles(() => ({
     "&:hover": {
       "& #spanDescription": {
         height: "40%",
-        transition: "all 2s ease",
+        transition: "all 1s ease",
         color: "white",
       },
       "& #spanHover": {
-        transition: "all 2s ease",
+        transition: "all 1s ease",
         display: "block",
       },
       "& #div1": {
         // height: "65%",
-        transition: "all 2s ease",
+        transition: "all 1s ease",
         color: "white",
         transform: "scale(1,1)",
       },
