@@ -20,7 +20,7 @@ function DetailsProductInfo() {
     setOpen(false);
   };
   return (
-    <Box mt={6}>
+    <Box>
       <Grid container spacing={1}>
         <Grid item xs={12}>
           <Typography variant="h5">
