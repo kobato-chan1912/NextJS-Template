@@ -76,8 +76,8 @@ export default function ExampleEmail() {
                               style={{
                                 color: "white",
                                 borderColor: "white",
-                                paddingTop: "0.5rem",
-                                paddingBottom: "0.5rem",
+                                paddingTop: "0.42rem",
+                                paddingBottom: "0.42rem",
                               }}
                             >
                               <b>Subscribe now</b>
