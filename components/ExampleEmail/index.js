@@ -40,7 +40,7 @@ export default function ExampleEmail() {
                   left: 0,
                   width: "100%",
                   paddingTop: "10%",
-                  paddingLeft: '5%',
+                  paddingLeft: "5%",
                 }}
               >
                 <CardContent>
@@ -62,7 +62,7 @@ export default function ExampleEmail() {
                     </Grid>
                     <Grid item xs={12}>
                       <Grid container spacing={4} alignItems="center">
-                        <Grid item xs={12} md={4}>
+                        <Grid item xs={12} md={6}>
                           <TextFieldWhite
                             label="Enter your e-mail"
                             variant="outlined"
@@ -76,6 +76,8 @@ export default function ExampleEmail() {
                               style={{
                                 color: "white",
                                 borderColor: "white",
+                                paddingTop: "0.5rem",
+                                paddingBottom: "0.5rem",
                               }}
                             >
                               <b>Subscribe now</b>
