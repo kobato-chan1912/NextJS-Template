@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Dialog from "@material-ui/core/Dialog";
 import {
-    Box,
+  Box,
   Button,
   Card,
   DialogContent,
@@ -12,10 +12,10 @@ import {
 } from "@material-ui/core";
 
 export default function DialogCheckOrder(props) {
-  const { onClose, selectedValue, open } = props;
+  const { onClose, open } = props;
 
   const handleClose = () => {
-    onClose(selectedValue);
+    onClose();
   };
 
   return (
@@ -111,5 +111,4 @@ export default function DialogCheckOrder(props) {
 DialogCheckOrder.propTypes = {
   onClose: PropTypes.func.isRequired,
   open: PropTypes.bool.isRequired,
-  selectedValue: PropTypes.string.isRequired,
 };

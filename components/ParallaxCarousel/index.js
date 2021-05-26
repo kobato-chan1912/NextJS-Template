@@ -149,7 +149,7 @@ const ParallaxCarousel = ({ data }) => {
     <>
       <IconButton
         className={cx(classes.arrow, classes.arrowLeft)}
-        size="large"
+        size="medium"
         disabled={index === 0}
         onClick={() => onChangeIndex(index - 1)}
       >
@@ -158,7 +158,7 @@ const ParallaxCarousel = ({ data }) => {
 
       <IconButton
         className={cx(classes.arrow, classes.arrowRight)}
-        size="large"
+        size="medium"
         disabled={index === data.length - 1}
         onClick={() => onChangeIndex(index + 1)}
       >
@@ -179,12 +179,12 @@ const ParallaxCarousel = ({ data }) => {
       {/* Image */}
       <div className={classes.indicatorContainer}>
         <Grid container spacing={2}>
-          {data.map(({ id, image }, i) => (
-            <Grid item xs="auto" key={id}>
+          {data.map(({ image }, i) => (
+            <Grid item xs="auto" key={i.toString()}>
               <CardMedia
                 component={Button}
                 image={image}
-                active={i === index}
+                active={`${i === index}`}
                 onClick={() => onChangeIndex(i)}
                 style={{ width: "100px", height: "100px", cursor: "pointer" }}
               />
@@ -195,8 +195,8 @@ const ParallaxCarousel = ({ data }) => {
     </>
   );
   const renderChildren = ({ injectStyle, fineIndex }) =>
-    data.map(({ id, title, subtitle, image }, i) => (
-      <div key={id} className={classes.slide}>
+    data.map(({ image }, i) => (
+      <div key={i.toString()} className={classes.slide}>
         {/* <Typography
           noWrap
           className={cx(classes.text, classes.title)}
@@ -228,7 +228,6 @@ const ParallaxCarousel = ({ data }) => {
 ParallaxCarousel.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
       title: PropTypes.string,
       subtitle: PropTypes.string,
       image: PropTypes.string,
