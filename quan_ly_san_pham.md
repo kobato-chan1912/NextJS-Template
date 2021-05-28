@@ -3,6 +3,8 @@ METHOD  GET: {{api}}/product/paging
 query:{
     limit: number,
     page: number,
+    status: boolean,
+    keyword: string
 }
 ```
 Response
@@ -61,3 +63,5 @@ BODY
     description: [string - 6 item],
 }
 ```
+
+METHOD DELETE: {{api}}/product/:id => delete product
